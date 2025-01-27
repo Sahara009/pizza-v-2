@@ -1,0 +1,32 @@
+.paginate {
+  li {
+    display: inline-block;
+
+    a {
+      text-align: center;
+      width: 45px;
+      height: 45px;
+      line-height: 42px;
+      border-radius: 30px;
+      border: 1px solid orange;
+      cursor: pointer;
+      margin-right: 10px;
+      display: inline-block;
+      color: orange;
+
+      &:hover {
+        background-color: orange;
+        color: white;
+      }
+    }
+  }
+
+  :global {
+    .selected {
+      a {
+        background-color: orange;
+        color: white;
+      }
+    }
+  }
+}
