@@ -1,5 +1,6 @@
 {
   "name": "my-app",
+  "homepage": "https://sahara009.github.io/pizza-v-2",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -31,7 +32,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server -w server/db.json -p 3001"
+    "server": "json-server -w server/db.json -p 3001",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

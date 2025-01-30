@@ -49,7 +49,8 @@ export const HomePage: React.FC = () => {
     const categories = categoryId > 0 ? `category=${categoryId}` : "";
     const search = inputValue ? `search=${inputValue}` : "";
 
-    const url = `http://localhost:3001/pizzas?`;
+    const url = `${process.env.REACT_APP_API_URL}/pizzas?`;
+
     dispatch(
       fetchPizzas({
         url,

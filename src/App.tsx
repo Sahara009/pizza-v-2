@@ -1,6 +1,13 @@
 import React, { createContext } from "react";
 import "./scss/app.scss";
-import { Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  HashRouter,
+  Navigate,
+  Route,
+  Router,
+  Routes,
+} from "react-router-dom";
 
 //components
 import { HomePage } from "./pages/HomePage";
@@ -12,13 +19,16 @@ import { Layout } from "./layouts/Layout";
 export const ContextInput = createContext("");
 
 function App() {
+  if (window.location.pathname === "/") {
+    return <Navigate to="/home" />;
+  }
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route path="" element={<HomePage />} />
-        <Route path="/cart" element={<CartPage />} />
+        <Route index element={<HomePage />} />
+        <Route path="cart" element={<CartPage />} />
         <Route path="*" element={<Errorpage />} />
-        <Route path="/pizzas/:id" element={<FullPizza />} />
+        <Route path="pizzas/:id" element={<FullPizza />} />
       </Route>
     </Routes>
   );
